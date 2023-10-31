@@ -90,6 +90,13 @@ async function botResponseStream(responseId) {
     }
     refreshResponseDiv(responseId, "", true);
     console.log('Reponse end.');
+    // Get all the links in the webpage
+    const links = document.querySelectorAll('a');
+
+    // Loop through each link and set the target attribute to "_blank"
+    links.forEach(link => {
+        link.setAttribute('target', '_blank');
+    });
 }
 
 function buildMessages() {
